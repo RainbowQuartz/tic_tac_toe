@@ -1,11 +1,10 @@
 require 'pry'
 
 class Game
-  @@turns = 1
-
   def initialize
     Players.new
     Board.new
+    @@turns = 1
   end
 
   def Game.turn_action(row, column, string)
@@ -36,31 +35,34 @@ class Game
   end
 
   def Game.victory?
-    if (
-      ($boardcases[0][0] == $boardcases[0][1] && $boardcases[0][0] == $boardcases[0][2] && $boardcases[0][0] == '|X|') ||
-      ($boardcases[1][0] == $boardcases[1][1] && $boardcases[1][0] == $boardcases[1][2] && $boardcases[1][0] == '|X|') ||
-      ($boardcases[2][0] == $boardcases[2][1] && $boardcases[2][0] == $boardcases[2][2] && $boardcases[2][0] == '|X|') ||
-      ($boardcases[0][0] == $boardcases[1][0] && $boardcases[0][0] == $boardcases[2][0] && $boardcases[0][0] == '|X|') ||
-      ($boardcases[0][1] == $boardcases[1][1] && $boardcases[0][1] == $boardcases[2][1] && $boardcases[0][1] == '|X|') ||
-      ($boardcases[0][2] == $boardcases[1][2] && $boardcases[0][2] == $boardcases[2][2] && $boardcases[0][2] == '|X|') ||
-      ($boardcases[0][0] == $boardcases[1][1] && $boardcases[0][0] == $boardcases[2][2] && $boardcases[0][0] == '|X|') ||
-      ($boardcases[0][2] == $boardcases[1][1] && $boardcases[0][2] == $boardcases[2][2] && $boardcases[0][2] == '|X|')
-    )
-      return puts "Player 1 #{$player_1} win, well done!!!"
-    elsif (
-      ($boardcases[0][0] == $boardcases[0][1] && $boardcases[0][0] == $boardcases[0][2] && $boardcases[0][0] == '|0|') ||
-      ($boardcases[1][0] == $boardcases[1][1] && $boardcases[1][0] == $boardcases[1][2] && $boardcases[1][0] == '|0|') ||
-      ($boardcases[2][0] == $boardcases[2][1] && $boardcases[2][0] == $boardcases[2][2] && $boardcases[2][0] == '|0|') ||
-      ($boardcases[0][0] == $boardcases[1][0] && $boardcases[0][0] == $boardcases[2][0] && $boardcases[0][0] == '|0|') ||
-      ($boardcases[0][1] == $boardcases[1][1] && $boardcases[0][1] == $boardcases[2][1] && $boardcases[0][1] == '|0|') ||
-      ($boardcases[0][2] == $boardcases[1][2] && $boardcases[0][2] == $boardcases[2][2] && $boardcases[0][2] == '|0|') ||
-      ($boardcases[0][0] == $boardcases[1][1] && $boardcases[0][0] == $boardcases[2][2] && $boardcases[0][0] == '|0|') ||
-      ($boardcases[0][2] == $boardcases[1][1] && $boardcases[0][2] == $boardcases[2][2] && $boardcases[0][2] == '|0|')
-    )
-      return puts "Player 1 #{$player_1} win, well done!!!"
+    if $boardcases.join.include?("|_|")
+      if (
+        ($boardcases[0][0] == $boardcases[0][1] && $boardcases[0][0] == $boardcases[0][2] && $boardcases[0][0] == '|X|') ||
+        ($boardcases[1][0] == $boardcases[1][1] && $boardcases[1][0] == $boardcases[1][2] && $boardcases[1][0] == '|X|') ||
+        ($boardcases[2][0] == $boardcases[2][1] && $boardcases[2][0] == $boardcases[2][2] && $boardcases[2][0] == '|X|') ||
+        ($boardcases[0][0] == $boardcases[1][0] && $boardcases[0][0] == $boardcases[2][0] && $boardcases[0][0] == '|X|') ||
+        ($boardcases[0][1] == $boardcases[1][1] && $boardcases[0][1] == $boardcases[2][1] && $boardcases[0][1] == '|X|') ||
+        ($boardcases[0][2] == $boardcases[1][2] && $boardcases[0][2] == $boardcases[2][2] && $boardcases[0][2] == '|X|') ||
+        ($boardcases[0][0] == $boardcases[1][1] && $boardcases[0][0] == $boardcases[2][2] && $boardcases[0][0] == '|X|') ||
+        ($boardcases[0][2] == $boardcases[1][1] && $boardcases[0][2] == $boardcases[2][2] && $boardcases[0][2] == '|X|')
+        )
+        puts "Player 1 #{$player_1} win, well done!!!"
+      elsif (
+        ($boardcases[0][0] == $boardcases[0][1] && $boardcases[0][0] == $boardcases[0][2] && $boardcases[0][0] == '|0|') ||
+        ($boardcases[1][0] == $boardcases[1][1] && $boardcases[1][0] == $boardcases[1][2] && $boardcases[1][0] == '|0|') ||
+        ($boardcases[2][0] == $boardcases[2][1] && $boardcases[2][0] == $boardcases[2][2] && $boardcases[2][0] == '|0|') ||
+        ($boardcases[0][0] == $boardcases[1][0] && $boardcases[0][0] == $boardcases[2][0] && $boardcases[0][0] == '|0|') ||
+        ($boardcases[0][1] == $boardcases[1][1] && $boardcases[0][1] == $boardcases[2][1] && $boardcases[0][1] == '|0|') ||
+        ($boardcases[0][2] == $boardcases[1][2] && $boardcases[0][2] == $boardcases[2][2] && $boardcases[0][2] == '|0|') ||
+        ($boardcases[0][0] == $boardcases[1][1] && $boardcases[0][0] == $boardcases[2][2] && $boardcases[0][0] == '|0|') ||
+        ($boardcases[0][2] == $boardcases[1][1] && $boardcases[0][2] == $boardcases[2][2] && $boardcases[0][2] == '|0|')
+        )
+        puts "Player 1 #{$player_1} win, well done!!!"
+      end
+    else
+      puts "match nul"
     end
   end
-
 end
 
 class Board < Game
