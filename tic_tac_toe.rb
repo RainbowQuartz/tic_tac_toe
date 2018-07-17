@@ -5,6 +5,14 @@ class Game
     Players.new
     Board.new
   end
+
+  def turn
+      if turn odd?
+        player_1 chooses where to play
+      else
+        player_2 chooses where to play
+      end
+  end
 end
 
 class Board < Game
@@ -25,6 +33,8 @@ class Players < Game
 end
 
 class Boardcases < Board
+  attr_accessor :case_1, :case_2, :case_3, :case_4, :case_5, :case_6, :case_7, :case_8, :case_9
+  
   def initialize
     @case_1 = '|_|'
     @case_2 = '|_|'
@@ -42,7 +52,4 @@ class Boardcases < Board
 end
 
 binding.pry
-Boardcases.new
-Board.new
-Players.new
 Game.new
