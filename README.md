@@ -1,6 +1,6 @@
 <html>
 <body>
-  <h1>Projet Tic tac Toc (Morpion)THP Semaine 3</h1>
+  <h1>Projet Tic tac Toe (Morpion)THP Semaine 3</h1>
   <h2>Groupe Leona Chevrel, Rémi  Samson et Christophe Leray</h2>
   <ul>5 fichiers:
     <li>class_game.rb: défintion de la classe Game</li>
