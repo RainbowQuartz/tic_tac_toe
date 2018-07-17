@@ -18,19 +18,20 @@ class Game
 
   def Game.turn
     if @@turns.odd?
-      print "#{$player_1}'s turn, enter the row in which you want to play : "
+      print "#{$player_1}'s turn, enter the row in which you want to play (1--3): "
       row = gets.to_i
-      print "enter the column in which you want to play : "
+      print "enter the column in which you want to play (1--3): "
       column = gets.to_i
       Game.turn_action(row, column, '|X|')
     else
-      print "#{$player_2}'s turn, enter the row in which you want to play : "
+      print "#{$player_2}'s turn, enter the row in which you want to play (1--3): "
       row = gets.to_i
-      print "enter the column in which you want to play : "
+      print "enter the column in which you want to play (1--3): "
       column = gets.to_i
       Game.turn_action(row, column, '|O|')
     end
     Game.victory?
+    $boardcases.map{|x| puts x.join}
     @@turns += 1
   end
 
@@ -68,11 +69,13 @@ end
 class Board < Game
   def initialize
     Boardcases.new
+    $boardcases.map{|x| puts x.join}
   end
-
+=begin
   def Board.making_the_board
-    puts $Boardcases.map{|x| puts x.join}
+    $boardcases.map{|x| puts x.join}
   end
+=end
 end
 
 class Players < Game
