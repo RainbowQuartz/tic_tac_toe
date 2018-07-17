@@ -8,28 +8,30 @@ class Game
     Board.new
   end
 
-<<<<<<< HEAD
+  def Game.turn_action(row, column, string)
+    if $boardcases[row - 1][column - 1] == '|_|'
+      $boardcases[row - 1][column - 1] = string
+    else
+      puts "This case has already been played or doesn't exist, try again."
+      @@turns += 1
+    end
+  end
+
   def Game.turn
     if @@turns.odd?
-    print "#{$player_1}'s turn, enter the row in which you want to play"
-    row = gets.to_i
-    print "enter the column in which you want to play"
-    column = gets.to_i
+      print "#{$player_1}'s turn, enter the row in which you want to play : "
+      row = gets.to_i
+      print "enter the column in which you want to play : "
+      column = gets.to_i
+      Game.turn_action(row, column, '|X|')
     else
-    print "#{$player_2}'s turn, enter the row in which you want to play"
-    row = gets.to_i
-    print "enter the column in which you want to play"
-    column = gets.to_i
+      print "#{$player_2}'s turn, enter the row in which you want to play : "
+      row = gets.to_i
+      print "enter the column in which you want to play : "
+      column = gets.to_i
+      Game.turn_action(row, column, '|O|')
     end
     @@turns += 1
-=======
-  def turn
-      if turn odd?
-        player_1 chooses where to play
-      else
-        player_2 chooses where to play
-      end
->>>>>>> master
   end
 end
 
@@ -54,9 +56,9 @@ end
 
 class Boardcases < Board
   attr_accessor :case_1, :case_2, :case_3, :case_4, :case_5, :case_6, :case_7, :case_8, :case_9
-  
+
   def initialize
-    $Boardcases =  Array.new(3) { Array.new(3, '|_|')}
+    $boardcases =  Array.new(3) { Array.new(3, '|_|')}
   end
 end
 
