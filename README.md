@@ -9,6 +9,6 @@
     <li>class_boardcases.rb: défintion de la classe Boardcases</li>
     <li>tic_tac_toe.rb: Programme principale qui lance le jeu</li>
   </ul> 
-  <p> pour lancer le jeu lancer la commande ruby tic_tac_toe.rb</p>
+  <p> Pour lancer le jeu, lancer la commande 'ruby tic_tac_toe.rb'</p>
 </body>
 </Html>
