@@ -83,7 +83,7 @@ class Game
         ($boardcases[0][0] == $boardcases[1][1] && $boardcases[0][0] == $boardcases[2][2] && $boardcases[0][0] == '|0|') ||
         ($boardcases[0][2] == $boardcases[1][1] && $boardcases[0][2] == $boardcases[2][2] && $boardcases[0][2] == '|0|')
         )
-        puts "Player 1 #{$player_1} win, well done!!!"
+        puts "Player 1 #{$player_2} win, well done!!!"
         return 'win'
       end
     else
