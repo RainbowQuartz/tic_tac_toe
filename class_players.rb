@@ -9,4 +9,5 @@ class Players
     print '>'
     $player_2 = gets.chomp
   end
+  #chaque joueur rentre son nom
 end

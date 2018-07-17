@@ -8,6 +8,7 @@ class Game
     Board.new
     @@turns = 1
   end
+  #l'initialisation renvoie aux fonctions initialize des classes dépendant de Game
 
   def Game.turn_action(row, column, string)
     if $boardcases[row - 1][column - 1] == '|_|'
@@ -17,6 +18,7 @@ class Game
       @@turns += 1
     end
   end
+  #permet d'effectuer les actions communes aux deux joueur.se.s
 
   def Game.get_row
     row = gets.to_i
@@ -26,6 +28,7 @@ class Game
     end
     return row
   end
+  #fonction commune des entrée de rang
 
   def Game.get_column
     print "enter the column in which you want to play (1--3): "
@@ -36,6 +39,7 @@ class Game
     end
     return column
   end
+  #fonction commune des entrées de colonnes
 
   def Game.turn
     if @@turns.odd?
@@ -53,6 +57,7 @@ class Game
     $boardcases.map{|x| puts x.join}
     @@turns += 1
   end
+  #fonction déroulant un tour
 
   def Game.victory?
     if $boardcases.join.include?("|_|")
@@ -86,4 +91,5 @@ class Game
       return 'win'
     end
   end
+  #fonction verifiant si une condition de victoire est atteinte
 end
