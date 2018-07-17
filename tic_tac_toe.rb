@@ -69,6 +69,10 @@ class Board < Game
   def initialize
     Boardcases.new
   end
+
+  def Board.making_the_board
+    puts $Boardcases.map{|x| puts x.join}
+  end
 end
 
 class Players < Game
