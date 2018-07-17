@@ -8,6 +8,7 @@ class Game
     Board.new
   end
 
+<<<<<<< HEAD
   def Game.turn
     if @@turns.odd?
     print "#{$player_1}'s turn, enter the row in which you want to play"
@@ -21,6 +22,14 @@ class Game
     column = gets.to_i
     end
     @@turns += 1
+=======
+  def turn
+      if turn odd?
+        player_1 chooses where to play
+      else
+        player_2 chooses where to play
+      end
+>>>>>>> master
   end
 end
 
@@ -44,13 +53,12 @@ class Players < Game
 end
 
 class Boardcases < Board
+  attr_accessor :case_1, :case_2, :case_3, :case_4, :case_5, :case_6, :case_7, :case_8, :case_9
+  
   def initialize
     $Boardcases =  Array.new(3) { Array.new(3, '|_|')}
   end
 end
 
 binding.pry
-Boardcases.new
-Board.new
-Players.new
 Game.new
