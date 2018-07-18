@@ -3,7 +3,13 @@ require_relative 'class_boardcases'
 class Board
   def initialize
     Boardcases.new
-    $boardcases.map { |x| puts x.join }
+    Board.puts_the_board
   end
-  #appelle la classe Boardcases lors de l'initialisation
+  #appelle la classe Boardcases lors de l'initialisation et la méthode puts_the_board
+
+  def Board.puts_the_board
+  	$boardcases.map { |x| puts x.join }
+  	puts "-----------------------------------------------------------"
+  end
+  #affiche le plateau de jeu
 end

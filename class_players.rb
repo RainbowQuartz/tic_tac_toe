@@ -4,10 +4,10 @@ class Players
   def initialize
     p 'Name of player 1 :'
     print '>'
-    $player_1 = gets.chomp
+    $player_1 = gets.chomp.capitalize
     p 'Name of player 2 :'
     print '>'
-    $player_2 = gets.chomp
+    $player_2 = gets.chomp.capitalize
   end
   #chaque joueur rentre son nom
 end
